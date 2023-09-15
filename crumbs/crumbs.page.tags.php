@@ -9,6 +9,8 @@ Tags=page.tpl:{PAGE_CRUMBS}
 /**
  * [SEDBY] Crumbs / Pages
  * @package crumbs
+ * @author Vladimir Sibirov, Dmitri Beliavski
+ * @copyright (c) 2017-2023 seditio.by
  */
 
 defined('COT_CODE') or die('Wrong URL');
@@ -19,14 +21,11 @@ $pag_fieldname = empty($cfg['plugin']['crumbs']['extrafield_pag']) ? 'title' : $
 $cat_fieldname = empty($cfg['plugin']['crumbs']['extrafield_cat']) ? 'title' : $cfg['plugin']['crumbs']['extrafield_cat'];
 
 /* === Hook === */
-foreach (cot_getextplugins('crumbs.page.extrafield') as $pl)
-{
+foreach (cot_getextplugins('crumbs.page.extrafield') as $pl) {
   include $pl;
 }
 /* ===== */
 
 $pag_path = cot_structure_buildpath('page', $pag['page_cat'], $cat_fieldname);
 $pag_crumbs[] = array($pag['page_pageurl'], $pag['page_'.$pag_fieldname]);
-$t->assign(array(
-  'PAGE_CRUMBS' => cot_crumbs(array_merge($pag_path, $pag_crumbs), $cfg['homebreadcrumb'], $cfg['plugin']['crumbs']['what_title'])
-));
+$t->assign('PAGE_CRUMBS', sedby_crumbs(array_merge($pag_path, $pag_crumbs), $cfg['homebreadcrumb'], $cfg['plugin']['crumbs']['what_title']));
