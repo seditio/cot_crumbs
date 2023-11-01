@@ -15,6 +15,6 @@ $R['crumbs_item_last'] = '<li class="breadcrumb-item">{$title}</li>';
 $R['crumbs_close']     = '</ul>';
 
 $R['schema_crumbs_open']      = '<ul class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">';
-$R['schema_crumbs_item']      = '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="{$url}" title="{$title}" itemprop="item"><span itemprop="name">{$title}</span><meta itemprop="position" content="{$number}" /></a></li>';
-$R['schema_crumbs_item_last'] = '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">{$title}</span><meta itemprop="position" content="{$number}" /></li>';
+$R['schema_crumbs_item']      = '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="{$url}" title="{$title}" itemprop="item"><span itemprop="name" content="{$title}">{$title}</span><meta itemprop="position" content="{$number}" /></a></li>';
+$R['schema_crumbs_item_last'] = '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name" content="{$title}">{$title}</span><meta itemprop="position" content="{$number}" /></li>';
 $R['schema_crumbs_close']     = '</ul>';
